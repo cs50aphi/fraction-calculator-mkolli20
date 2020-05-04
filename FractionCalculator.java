@@ -18,7 +18,7 @@ public class FractionCalculator
 
         while(!quit)
         {
-            
+
         }
 
 
@@ -26,10 +26,35 @@ public class FractionCalculator
     }
 }
 
+
 public static String getOperation(Scanner kb)
 {
+
+    String validOperations = "+-/*=qQ";
+    String operation = kb.nextLine();
+
+    if(operation.length()==1)
+    {
+        if(validOperations.indexOf(operation) >= 0)
+        {
+            return operation;
+        }
+        else
+        {
+            System.out.println("Invalid Input");
+            return getOperation(kb);
+        }
+    }
+    else
+    {
+        System.out.println("Invalid Input");
+        return getOperation(kb);
+    }
+
+}
+
+
+public static Boolean validFraction(String input)
+{
     
-    String validOperations
-    
-    validOperations.indexOf('')
 }
