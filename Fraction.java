@@ -102,6 +102,7 @@ public class Fraction
     public boolean equals(Object o)
     {
         Fraction other = (Fraction) o;
+        other.toLowestTerms();
         if(numerator == other.getNumerator() && denominator == other.getDenominator())
         {
             return true;
