@@ -56,5 +56,26 @@ public static String getOperation(Scanner kb)
 
 public static Boolean validFraction(String input)
 {
-    
+    // check if a negative appears after the division sign
+    if(input.indexOf("-") > input.indexOf("/"))
+    {
+        return false;
+    }
+
+    int vinculum = input.indexOf("/");
+    if(vinculum == -1)
+    {
+        return false;
+    }
+
+    String numerator = input.substring(0, vinculum);
+    String denominator = input.substring(vinculum, input.length());
+
+    if(!isNumber(numerator) || !isNumber(denominator) || denominator == '0')
+    {
+        return false;
+    }
+
+    return true;
 }
+
